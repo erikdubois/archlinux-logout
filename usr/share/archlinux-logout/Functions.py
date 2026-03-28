@@ -202,6 +202,10 @@ def _get_logout():
         return "pkill xmonad"
     elif desktop in ("dwm", "/usr/share/xsessions/dwm"):
         return "pkill dwm"
+    elif desktop in ("chadwm", "/usr/share/xsessions/chadwm"):
+        return "pkill chadwm"
+    elif desktop in ("ohmychadwm", "/usr/share/xsessions/ohmychadwm"):
+        return "pkill ohmychadwm"
     elif desktop in ("flexi", "/usr/share/xsessions/flexi"):
         return "pkill flexi"
     elif desktop in ("sunset", "/usr/share/xsessions/sunset"):
@@ -262,8 +266,6 @@ def _get_logout():
         return "pkill niri"
     elif desktop in ("oxwm", "/usr/share/wayland-sessions/oxwm"):
         return "pkill oxwm"
-    elif desktop:
-        return "pkill niri | pkill awesome | pkill nimdow| pkill bspwm | pkill cwm |  pkill dwm | pkill flexi | pkill dusk | pkill fvwm3 | pkill herbstluftwm | pkill i3 | pkill icewm | pkill jwm | pkill leftwm | pkill lxqt | pkill openbox | pkill qtile | pkill spectrwm | pkill wmderland | pkill xmonad | pkill worm | pkill berry | pkill Hypr | pkill hypr | pkill sway | pkill wayfire | pkill newm | pkill river"
     return None
 
 

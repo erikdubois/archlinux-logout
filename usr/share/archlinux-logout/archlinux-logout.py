@@ -18,7 +18,6 @@ gi.require_version("Wnck", "3.0")
 
 from gi.repository import Gtk, GdkPixbuf, Gdk, Wnck, GLib, GdkX11  # noqa
 
-
 class TransparentWindow(Gtk.Window):
     distr = id()
 
@@ -120,6 +119,8 @@ class TransparentWindow(Gtk.Window):
 
     def display_on_monitor(self):
         print("#### Archlinux Logout ####")
+        desktop = os.environ.get("DESKTOP_SESSION", "unknown").lower()
+        print(f"[DEBUG]: Desktop session = {desktop}")
         try:
             # test to see this device is a mouse
             if self.pointer.get_has_cursor():
