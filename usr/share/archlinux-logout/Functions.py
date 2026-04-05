@@ -205,8 +205,11 @@ def _get_logout():
     elif desktop in ("chadwm", "/usr/share/xsessions/chadwm"):
         return "pkill chadwm"
     elif desktop in ("ohmychadwm", "/usr/share/xsessions/ohmychadwm"):
-        cmd = shutil.which("sd-ohmychadwm")
-        return cmd if cmd else "pkill ohmychadwm"
+        shutdown_script = os.path.expanduser("~/.config/ohmychadwm/scripts/shutdown_ohmychadwm.sh")
+        if os.path.isfile(shutdown_script):
+            return shutdown_script
+        else:
+            return "pkill ohmychadwm"
     elif desktop in ("flexi", "/usr/share/xsessions/flexi"):
         return "pkill flexi"
     elif desktop in ("sunset", "/usr/share/xsessions/sunset"):
